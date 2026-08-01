@@ -1,13 +1,14 @@
-import { useState } from "react";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import { Outlet } from "react-router";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
     <>
-      <h1 className="bg-gray-700 justify-center">Hello</h1>
+      <Navbar />
+      <Outlet />
     </>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,14 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap");
+
+@theme {
+  --font-heading: "Fredoka", sans-serif;
+  --font-body: "Nunito", sans-serif;
+}
+:root {
+  --background: oklch(98.4% 0.014 180.72);
+}
+
 *,
 *::before,
 *::after {
@@ -10,4 +20,27 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  font-family: var(--font-body);
 }
+h1 {
+  font-family: var(--font-heading);
+}
+/* 
+bg: pink-50       #fdf2f8
+surface: white    #ffffff
+primary: pink-400 #f472b6
+primary-dark: pink-500 #ec4899
+text: rose-950    #4c0519
+text-muted: slate-600 #475569
+border: rose-100  #ffe4e6 
+*/
+
+/* 
+DARK MODE
+background: rose-950   #4c0519
+surface: slate-900    #0f172a
+text: rose-50         #fff1f2
+muted: slate-300      #cbd5e1
+border: rose-900      #881337
+accent: pink-300      #f9a8d4 
+*/
