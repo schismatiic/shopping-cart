@@ -32,6 +32,9 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
 }
+a {
+  cursor: pointer;
+}
 /* 
 bg: pink-50       #fdf2f8
 surface: white    #ffffff
