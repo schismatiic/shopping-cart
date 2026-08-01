@@ -5,8 +5,8 @@ import { useState } from "react";
 const Navbar = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
   return (
-    <nav>
-      <div className="flex justify-between text-xl m-4  items-center">
+    <nav className="">
+      <div className="flex justify-between text-lg m-4  items-center">
         <header className="flex gap-x-4">
           <button
             className="md:hidden cursor-pointer"
