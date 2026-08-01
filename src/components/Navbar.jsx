@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { User, Heart, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { FaPaw } from "react-icons/fa";
 
 const Navbar = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
@@ -19,7 +20,8 @@ const Navbar = () => {
             )}
           </button>
           <Link to="/">
-            <h1 className="font-black text-slate-600 text-2xl active:scale-95">
+            <h1 className="flex items-center gap-x-1 font-black text-slate-600 text-2xl active:scale-95">
+              <FaPaw className="w-6 h-6 text-slate-600" />
               minina
             </h1>
           </Link>
