@@ -9,14 +9,13 @@ const ArrivalCard = ({ arrivalName, arrivalImage }) => {
         src={arrivalImage}
         alt={arrivalName}
       />
-      <div className="flex flex-1 flex-col gap-y-2 mx-4 my-3 text-slate-600">
-        <h3 className="text-lg cursor-pointer">{arrivalName}</h3>
-        <Link
-          className="mt-auto flex items-center cursor-pointer hover:text-slate-400 active:scale-95"
-          to="/shop"
-        >
-          <p className="text-sm">View collection</p>
-          <ArrowRight className="w-6 h-6" />
+      <div className="flex flex-1 flex-col gap-y-2 mx-4 my-3 text-slate-600 hover:text-slate-400 active:scale-95">
+        <Link to="/shop">
+          <h3 className="text-lg">{arrivalName}</h3>
+          <div className="mt-auto flex items-center cursor-pointer ">
+            <p className="text-sm">View collection</p>
+            <ArrowRight className="w-6 h-6" />
+          </div>
         </Link>
       </div>
     </div>
