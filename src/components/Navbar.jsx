@@ -6,12 +6,13 @@ import { FaPaw } from "react-icons/fa";
 const Navbar = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
   return (
-    <nav className="">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-teal-50">
       <div className="flex justify-between text-lg m-4  items-center">
-        <header className="flex gap-x-4">
+        <div className="flex gap-x-4">
           <button
             className="md:hidden cursor-pointer"
             onClick={() => setToggleOpen(!toggleOpen)}
+            aria-label="Open/close menu"
           >
             {toggleOpen ? (
               <X className="w-6 h-6 hover:text-slate-600 active:scale-95" />
@@ -25,12 +26,20 @@ const Navbar = () => {
               minina
             </h1>
           </Link>
-        </header>
+        </div>
         <ul className="hidden md:flex font-medium items-center gap-x-8 [&_a:hover]:text-slate-600 [&_a:hover]:border-b-2 [&_a:hover]:border-slate-600">
-          <Link to="/">Home</Link>
-          <Link to="/shop">Shop</Link>
-          <Link to="/cart">Cart</Link>
-          <Link to="/about">About</Link>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/shop">Shop</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
         </ul>
 
         <div className="flex gap-x-4 *:cursor-pointer *:w-6 *:h-6">
@@ -44,30 +53,38 @@ const Navbar = () => {
       </div>
       {toggleOpen && (
         <ul className="md:hidden flex flex-col font-medium text-lg">
-          <Link
-            className="ml-4 py-2 hover:text-slate-600 active:scale-95"
-            to="/"
-          >
-            Home
-          </Link>
-          <Link
-            className="ml-4 py-2 hover:text-slate-600 active:scale-95"
-            to="/shop"
-          >
-            Shop
-          </Link>
-          <Link
-            className="ml-4 py-2 hover:text-slate-600 active:scale-95"
-            to="/cart"
-          >
-            Cart
-          </Link>
-          <Link
-            className="ml-4 py-2 hover:text-slate-600 active:scale-95"
-            to="/about"
-          >
-            About
-          </Link>
+          <li>
+            <Link
+              className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+              to="/"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+              to="/shop"
+            >
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+              to="/cart"
+            >
+              Cart
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+              to="/about"
+            >
+              About
+            </Link>
+          </li>
         </ul>
       )}
     </nav>

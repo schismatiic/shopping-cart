@@ -1,11 +1,12 @@
-import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import { Outlet } from "react-router";
 
 const App = () => {
   return (
     <>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <Outlet />
     </>
   );
