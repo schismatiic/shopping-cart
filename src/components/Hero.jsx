@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { FaPaw } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -15,10 +16,11 @@ const Hero = () => {
         </p>
       </div>
       <Link
-        className="md:ml-18 text-center border border-rose-300/30 cursor-pointer bg-pink-400 hover:bg-pink-500 text-teal-50 w-25 p-2 rounded-lg font-bold"
+        className="flex mt-3 gap-x-2 justify-center items-center md:ml-18 text-center border border-rose-300/30 cursor-pointer bg-pink-400 hover:bg-pink-500 active:scale-95 text-teal-50 w-34 p-2 rounded-lg font-bold"
         to="/shop"
       >
         Shop now
+        <FaPaw className="w-6 h-6" />
       </Link>
     </section>
   );

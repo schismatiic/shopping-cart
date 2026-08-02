@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { User, Heart, Menu, X } from "lucide-react";
+import { User, Heart, ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { FaPaw } from "react-icons/fa";
 
@@ -46,6 +46,9 @@ const Navbar = () => {
           <div className="flex gap-x-4 *:cursor-pointer *:w-6 *:h-6">
             <Link to="/favorites" aria-label="Favorites">
               <Heart className="hover:text-slate-600" />
+            </Link>
+            <Link to="/cart" aria-label="Cart">
+              <ShoppingBag className="hover:text-slate-600" />
             </Link>
             <Link to="/profile" aria-label="Profile">
               <User className="hover:text-slate-600" />
