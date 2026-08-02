@@ -4,9 +4,7 @@ import { Outlet } from "react-router";
 const App = () => {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
+      <Navbar />
       <Outlet />
     </>
   );
