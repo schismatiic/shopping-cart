@@ -36,6 +36,19 @@ h3 {
 a {
   cursor: pointer;
 }
+@keyframes paw-spin-3d {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(600px) rotateY(360deg);
+  }
+}
+
+.animate-paw-spin {
+  animation: paw-spin-3d 1.2s linear infinite;
+  transform-style: preserve-3d;
+}
 /* 
 bg: pink-50       #fdf2f8
 surface: white    #ffffff
