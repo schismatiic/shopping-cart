@@ -1,5 +1,7 @@
 import { FaPaw } from "react-icons/fa";
 import FeaturedCard from "./FeaturedCard";
+import Header from "./Header";
+
 const Featured = ({ products, loading, error }) => {
   //   const featuredProducts = [
   //     {
@@ -33,11 +35,7 @@ const Featured = ({ products, loading, error }) => {
   //   ];
   return (
     <section id="featured">
-      <div className="flex justify-center items-center gap-x-2 text-slate-600 ">
-        <FaPaw className="w-6 h-6" />
-        <h3 className="text-2xl font-semibold">Featured</h3>
-        <FaPaw className="w-6 h-6" />
-      </div>
+      <Header headerText={"Featured"} />
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-5 mx-6 md:mx-30 gap-4">
         {products.slice(4, 8).map((product, index) => (
           <li key={product.id}>

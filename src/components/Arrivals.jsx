@@ -1,5 +1,5 @@
-import { FaPaw } from "react-icons/fa";
 import ArrivalCard from "./ArrivalCard";
+import Header from "./Header";
 
 const Arrivals = () => {
   const arrivals = [
@@ -30,11 +30,7 @@ const Arrivals = () => {
   ];
   return (
     <section className="my-5" id="arrivals">
-      <div className="flex justify-center items-center gap-x-2 text-slate-600 ">
-        <FaPaw className="w-6 h-6" />
-        <h3 className="text-2xl font-semibold">New arrivals</h3>
-        <FaPaw className="w-6 h-6" />
-      </div>
+      <Header headerText={"New arrivals"} />
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-5 mx-6 md:mx-30 gap-4">
         {arrivals.map((arrival) => (
           <li key={arrival.id}>

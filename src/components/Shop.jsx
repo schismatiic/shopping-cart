@@ -1,11 +1,9 @@
 import { useOutletContext } from "react-router";
 import ShopCard from "./ShopCard";
 import Searchbar from "./Searchbar";
-import { useState } from "react";
 
 const Shop = () => {
   const { products, error, loading } = useOutletContext();
-  const [quantity, setQuantity] = useState(0);
 
   return (
     <section id="shop">
@@ -17,8 +15,6 @@ const Shop = () => {
               shopName={product.title}
               shopPrice={product.price}
               shopImage={product.image}
-              quantity={quantity}
-              setQuantity={setQuantity}
             />
           </li>
         ))}

@@ -1,13 +1,10 @@
 import { Link } from "react-router";
 import { FaPaw } from "react-icons/fa";
+import { useState } from "react";
 
-const ShopCard = ({
-  shopName,
-  shopPrice,
-  shopImage,
-  quantity,
-  setQuantity,
-}) => {
+const ShopCard = ({ shopName, shopPrice, shopImage }) => {
+  const [quantity, setQuantity] = useState(0);
+
   return (
     <Link
       to="/shop"

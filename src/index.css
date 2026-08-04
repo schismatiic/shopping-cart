@@ -33,6 +33,14 @@ h3 {
   background-position: center;
   background-repeat: no-repeat;
 }
+#hero-about {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("./assets/hero_about.png");
+  background-size: cover;
+  background-position: 20% center;
+  background-repeat: no-repeat;
+}
 a {
   cursor: pointer;
 }

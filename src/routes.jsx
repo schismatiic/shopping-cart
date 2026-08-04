@@ -1,6 +1,7 @@
 import App from "./App";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
+import About from "./components/About";
 import ErrorPage from "./components/ErrorPage";
 
 const routes = [
@@ -16,6 +17,10 @@ const routes = [
       {
         path: "shop",
         element: <Shop />,
+      },
+      {
+        path: "about",
+        element: <About />,
       },
     ],
   },
