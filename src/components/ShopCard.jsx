@@ -43,10 +43,10 @@ const ShopCard = ({
           </div>
           <div className="flex justify-start">
             <Link
-              className="flex mt-3 w-full gap-x-2 justify-center items-center text-center border border-rose-300/30 cursor-pointer bg-pink-400 hover:bg-pink-500 active:scale-95 text-teal-50 w-34 p-2 rounded-lg font-bold"
+              className="flex mt-3 w-full gap-x-2 justify-center items-center text-center border border-rose-300/30 cursor-pointer bg-pink-400 hover:bg-pink-500 active:scale-95 text-teal-50 p-2 rounded-lg font-bold"
               to="/shop"
             >
-              Shop now
+              Add to cart
               <FaPaw className="w-6 h-6" />
             </Link>
           </div>

@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router";
 import ShopCard from "./ShopCard";
+import Searchbar from "./Searchbar";
 import { useState } from "react";
 
 const Shop = () => {
@@ -8,6 +9,7 @@ const Shop = () => {
 
   return (
     <section id="shop">
+      <Searchbar />
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-5 mx-6 md:mx-30 gap-4">
         {products.map((product) => (
           <li key={product.id}>
