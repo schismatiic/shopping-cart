@@ -5,6 +5,7 @@ import { FaPaw } from "react-icons/fa";
 
 const Navbar = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
+  const [headerText, setHeaderText] = useState("minina");
   return (
     <header className="sticky top-0 z-50 bg-teal-50">
       <nav className="py-0.5">
@@ -21,10 +22,17 @@ const Navbar = () => {
                 <Menu className="w-6 h-6 hover:text-slate-600 active:scale-95" />
               )}
             </button>
-            <Link to="/">
-              <h1 className="flex items-center gap-x-1 font-black text-slate-600 text-2xl active:scale-95">
-                <FaPaw className="w-6 h-6 text-slate-600" />
-                minina
+            <Link
+              className="flex items-center gap-x-2"
+              onClick={() => {
+                setHeaderText("meow");
+                setTimeout(() => setHeaderText("minina"), "300");
+              }}
+              to="/"
+            >
+              <FaPaw className="w-6 h-6 text-slate-600" />
+              <h1 className="flex w-10 items-center font-black text-slate-600 text-2xl active:scale-95">
+                {headerText}
               </h1>
             </Link>
           </div>
