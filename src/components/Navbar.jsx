@@ -3,7 +3,7 @@ import { User, Heart, ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { FaPaw } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ cartCounter }) => {
   const [toggleOpen, setToggleOpen] = useState(false);
   const [headerText, setHeaderText] = useState("minina");
   return (
@@ -55,8 +55,17 @@ const Navbar = () => {
             <Link to="/favorites" aria-label="Favorites">
               <Heart className="hover:text-slate-600" />
             </Link>
-            <Link to="/cart" aria-label="Cart">
+            <Link
+              className="relative inline-block"
+              to="/cart"
+              aria-label="Cart"
+            >
               <ShoppingBag className="hover:text-slate-600" />
+              {cartCounter > 0 && (
+                <p className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-pink-500 text-xs font-bold text-white">
+                  {cartCounter}
+                </p>
+              )}
             </Link>
             <Link to="/profile" aria-label="Profile">
               <User className="hover:text-slate-600" />

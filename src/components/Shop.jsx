@@ -3,7 +3,8 @@ import ShopCard from "./ShopCard";
 import Searchbar from "./Searchbar";
 
 const Shop = () => {
-  const { products, error, loading } = useOutletContext();
+  const { products, error, loading, cartCounter, setCartCounter } =
+    useOutletContext();
 
   return (
     <section id="shop">
@@ -15,6 +16,8 @@ const Shop = () => {
               shopName={product.title}
               shopPrice={product.price}
               shopImage={product.image}
+              cartCounter={cartCounter}
+              setCartCounter={setCartCounter}
             />
           </li>
         ))}

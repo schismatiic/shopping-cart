@@ -2,8 +2,14 @@ import { Link } from "react-router";
 import { FaPaw } from "react-icons/fa";
 import { useState } from "react";
 
-const ShopCard = ({ shopName, shopPrice, shopImage }) => {
-  const [quantity, setQuantity] = useState(0);
+const ShopCard = ({
+  shopName,
+  shopPrice,
+  shopImage,
+  cartCounter,
+  setCartCounter,
+}) => {
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <Link
@@ -24,7 +30,7 @@ const ShopCard = ({ shopName, shopPrice, shopImage }) => {
           <div className="flex mt-3 items-center">
             <button
               className="flex justify-center items-center rounded-l-lg w-4 h-4 py-4 px-4 cursor-pointer text-2xl font-medium border border-rose-300/30 hover:bg-teal-100 active:scale-95"
-              onClick={() => quantity > 0 && setQuantity(quantity - 1)}
+              onClick={() => quantity > 1 && setQuantity(quantity - 1)}
             >
               -
             </button>
@@ -42,6 +48,7 @@ const ShopCard = ({ shopName, shopPrice, shopImage }) => {
             <Link
               className="flex mt-3 w-full gap-x-2 justify-center items-center text-center border border-rose-300/30 cursor-pointer bg-pink-400 hover:bg-pink-500 active:scale-95 text-teal-50 p-2 rounded-lg font-bold"
               to="/shop"
+              onClick={() => setCartCounter(cartCounter + 1)}
             >
               Add to cart
               <FaPaw className="w-6 h-6" />

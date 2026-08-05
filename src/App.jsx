@@ -7,6 +7,8 @@ import { FaPaw } from "react-icons/fa";
 
 const App = () => {
   const { products, loading, error } = useProducts();
+  const [cartCounter, setCartCounter] = useState(0);
+
   if (loading)
     return (
       <div className="flex flex-col gap-y-4 justify-center items-center min-h-screen">
@@ -19,8 +21,10 @@ const App = () => {
   if (error) return <p>A network error was encountered</p>;
   return (
     <>
-      <Navbar />
-      <Outlet context={{ products, loading, error }} />
+      <Navbar cartCounter={cartCounter} />
+      <Outlet
+        context={{ products, loading, error, cartCounter, setCartCounter }}
+      />
       <Footer />
     </>
   );
