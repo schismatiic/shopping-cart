@@ -7,7 +7,8 @@ const ShopCard = ({
   shopPrice,
   shopImage,
   cartCounter,
-  setCartCounter,
+  handleClick,
+  product,
 }) => {
   const [quantity, setQuantity] = useState(1);
 
@@ -45,14 +46,14 @@ const ShopCard = ({
             </button>
           </div>
           <div className="flex justify-start">
-            <Link
+            <button
               className="flex mt-3 w-full gap-x-2 justify-center items-center text-center border border-rose-300/30 cursor-pointer bg-pink-400 hover:bg-pink-500 active:scale-95 text-teal-50 p-2 rounded-lg font-bold"
               to="/shop"
-              onClick={() => setCartCounter(cartCounter + 1)}
+              onClick={() => handleClick(product, quantity)}
             >
               Add to cart
               <FaPaw className="w-6 h-6" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

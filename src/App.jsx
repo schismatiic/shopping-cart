@@ -7,6 +7,7 @@ import { FaPaw } from "react-icons/fa";
 
 const App = () => {
   const { products, loading, error } = useProducts();
+  const [cart, setCart] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
 
   if (loading)
@@ -23,7 +24,15 @@ const App = () => {
     <>
       <Navbar cartCounter={cartCounter} />
       <Outlet
-        context={{ products, loading, error, cartCounter, setCartCounter }}
+        context={{
+          products,
+          loading,
+          error,
+          cart,
+          setCart,
+          cartCounter,
+          setCartCounter,
+        }}
       />
       <Footer />
     </>

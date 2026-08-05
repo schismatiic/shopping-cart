@@ -1,11 +1,28 @@
 import { useOutletContext } from "react-router";
+import { useState } from "react";
 import ShopCard from "./ShopCard";
 import Searchbar from "./Searchbar";
 
 const Shop = () => {
-  const { products, error, loading, cartCounter, setCartCounter } =
-    useOutletContext();
-
+  const {
+    products,
+    error,
+    loading,
+    cart,
+    setCart,
+    cartCounter,
+    setCartCounter,
+  } = useOutletContext();
+  const [cartAdded, setCartAdded] = useState([]);
+  const handleClick = (product, quantity) => {
+    setCartAdded([...cartAdded, product.id]);
+    if (!cartAdded.includes(product.id)) {
+      setCart([...cart, { ...product, quantity: quantity }]);
+      setCartCounter(cart.length + 1);
+    }
+    console.log(cart);
+    console.log(quantity);
+  };
   return (
     <section id="shop">
       <Searchbar />
@@ -17,7 +34,8 @@ const Shop = () => {
               shopPrice={product.price}
               shopImage={product.image}
               cartCounter={cartCounter}
-              setCartCounter={setCartCounter}
+              handleClick={handleClick}
+              product={product}
             />
           </li>
         ))}
