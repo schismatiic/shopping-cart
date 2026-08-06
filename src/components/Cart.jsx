@@ -1,0 +1,35 @@
+import Header from "./Header";
+import { useOutletContext } from "react-router";
+import CartItems from "./CartItems";
+const Cart = () => {
+  const { cart, setCart } = useOutletContext();
+  return (
+    <section id="cart">
+      <div>
+        <div className="flex justify-left items-center my-5 mx-6 md:mx-30 gap-x-2 text-slate-600 ">
+          <h3 className="text-2xl font-semibold">Your cart</h3>
+        </div>
+        <div>
+          {cart.length !== 0 ? (
+            <ul className="flex flex-col my-5 mx-6 md:mx-30 gap-4 border border-rose-300/30 rounded-xl p-4 ">
+              {cart.map((product) => (
+                <li
+                  className="border-b border-rose-300/30 py-4 last:border-b-0"
+                  key={product.id}
+                >
+                  <CartItems
+                    cartName={product.title}
+                    cartPrice={product.price}
+                    cartImage={product.image}
+                    cartQuantity={product.quantity}
+                  />
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </div>
+    </section>
+  );
+};
+export default Cart;
