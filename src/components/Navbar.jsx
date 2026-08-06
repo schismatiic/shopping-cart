@@ -77,6 +77,7 @@ const Navbar = ({ cartCounter }) => {
             <li>
               <Link
                 className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+                onClick={() => setToggleOpen(!toggleOpen)}
                 to="/"
               >
                 Home
@@ -85,6 +86,7 @@ const Navbar = ({ cartCounter }) => {
             <li>
               <Link
                 className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+                onClick={() => setToggleOpen(!toggleOpen)}
                 to="/shop"
               >
                 Shop
@@ -93,6 +95,7 @@ const Navbar = ({ cartCounter }) => {
             <li>
               <Link
                 className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+                onClick={() => setToggleOpen(!toggleOpen)}
                 to="/cart"
               >
                 Cart
@@ -101,6 +104,7 @@ const Navbar = ({ cartCounter }) => {
             <li>
               <Link
                 className="ml-4 py-2 hover:text-slate-600 active:scale-95"
+                onClick={() => setToggleOpen(!toggleOpen)}
                 to="/about"
               >
                 About
