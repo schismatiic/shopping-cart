@@ -67,7 +67,7 @@ const CartItems = ({
             +
           </button>
         </div>
-        <div>
+        <div className="w-10">
           <h3 className="font-semibold">Total:</h3>
           <p>${(cartPrice * cartQuantity).toFixed(2)}</p>
         </div>
