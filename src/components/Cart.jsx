@@ -2,7 +2,7 @@ import Header from "./Header";
 import { useOutletContext } from "react-router";
 import CartItems from "./CartItems";
 const Cart = () => {
-  const { cart, setCart } = useOutletContext();
+  const { cart, setCart, setCartCounter } = useOutletContext();
   return (
     <section id="cart">
       <div>
@@ -18,10 +18,14 @@ const Cart = () => {
                   key={product.id}
                 >
                   <CartItems
+                    product={product}
                     cartName={product.title}
                     cartPrice={product.price}
                     cartImage={product.image}
                     cartQuantity={product.quantity}
+                    cart={cart}
+                    setCart={setCart}
+                    setCartCounter={setCartCounter}
                   />
                 </li>
               ))}

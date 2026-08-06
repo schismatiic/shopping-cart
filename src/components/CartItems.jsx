@@ -1,4 +1,20 @@
-const CartItems = ({ cartName, cartPrice, cartImage, cartQuantity }) => {
+import { Trash2 } from "lucide-react";
+const CartItems = ({
+  product,
+  cartName,
+  cartPrice,
+  cartImage,
+  cartQuantity,
+  cart,
+  setCart,
+  setCartCounter,
+}) => {
+  const handleDelete = (product) => {
+    const existingProduct = cart.find((item) => item.id === product.id);
+    const newCart = cart.filter((item) => item.id !== product.id);
+    setCart(newCart);
+    setCartCounter(cart.length - 1);
+  };
   return (
     <div className="flex text-xs md:text-lg justify-between text-slate-600">
       <div className="flex items-center">
@@ -29,6 +45,12 @@ const CartItems = ({ cartName, cartPrice, cartImage, cartQuantity }) => {
           <h3 className="font-semibold">Total:</h3>
           <p>${(cartPrice * cartQuantity).toFixed(2)}</p>
         </div>
+        <button
+          className="cursor-pointer"
+          onClick={() => handleDelete(product)}
+        >
+          <Trash2 className="w-5 h-5 md:w-6 md:h-6 hover:text-slate-500 active:scale-95" />
+        </button>
       </div>
     </div>
   );
