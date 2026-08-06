@@ -9,6 +9,26 @@ const CartItems = ({
   setCart,
   setCartCounter,
 }) => {
+  const handleAdd = (product) => {
+    const existingProduct = cart.find((item) => item.id === product.id);
+    const updatedProduct = {
+      ...existingProduct,
+      quantity: existingProduct.quantity + 1,
+    };
+    const newCart = cart.filter((item) => item.id !== product.id);
+    setCart([...newCart, { ...updatedProduct }]);
+  };
+  const handleRemove = (product) => {
+    const existingProduct = cart.find((item) => item.id === product.id);
+    if (existingProduct.quantity > 1) {
+      const updatedProduct = {
+        ...existingProduct,
+        quantity: existingProduct.quantity - 1,
+      };
+      const newCart = cart.filter((item) => item.id !== product.id);
+      setCart([...newCart, { ...updatedProduct }]);
+    }
+  };
   const handleDelete = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
     const newCart = cart.filter((item) => item.id !== product.id);
@@ -31,13 +51,19 @@ const CartItems = ({
 
       <div className="flex justify-between items-center gap-x-2 md:gap-x-10">
         <div className="flex items-center">
-          <button className="flex justify-center items-center rounded-l-lg w-4 h-4 p-3 md:p-4 cursor-pointer text-xl md:text-2xl font-medium border border-rose-300/30 hover:bg-teal-100 active:scale-95">
+          <button
+            className="flex justify-center items-center rounded-l-lg w-4 h-4 p-3 md:p-4 cursor-pointer text-xl md:text-2xl font-medium border border-rose-300/30 hover:bg-teal-100 active:scale-95"
+            onClick={() => handleRemove(product)}
+          >
             -
           </button>
           <p className="flex justify-center items-center w-4 h-4 p-3 md:p-4 cursor-pointer border-t border-rose-300/30 border-b border-rose-300/30">
             {cartQuantity}
           </p>
-          <button className="flex justify-center items-center rounded-r-lg w-4 h-4 p-3 md:p-4 cursor-pointer text-xl md:text-2xl font-medium border border-rose-300/30 hover:bg-teal-100 active:scale-95">
+          <button
+            className="flex justify-center items-center rounded-r-lg w-4 h-4 p-3 md:p-4 cursor-pointer text-xl md:text-2xl font-medium border border-rose-300/30 hover:bg-teal-100 active:scale-95"
+            onClick={() => handleAdd(product)}
+          >
             +
           </button>
         </div>
