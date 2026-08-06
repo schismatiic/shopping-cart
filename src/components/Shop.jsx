@@ -13,15 +13,20 @@ const Shop = () => {
     cartCounter,
     setCartCounter,
   } = useOutletContext();
-  const [cartAdded, setCartAdded] = useState([]);
-  const handleClick = (product, quantity) => {
-    setCartAdded([...cartAdded, product.id]);
-    if (!cartAdded.includes(product.id)) {
-      setCart([...cart, { ...product, quantity: quantity }]);
+  const handleClick = (product, qty) => {
+    const exists = cart.some((item) => item.id === product.id);
+    if (!exists) {
+      setCart([...cart, { ...product, quantity: qty }]);
       setCartCounter(cart.length + 1);
+    } else {
+      const existingProduct = cart.find((item) => item.id === product.id);
+      const updatedProduct = {
+        ...existingProduct,
+        quantity: existingProduct.quantity + qty,
+      };
+      const newCart = cart.filter((item) => item.id !== product.id);
+      setCart([...newCart, { ...updatedProduct }]);
     }
-    console.log(cart);
-    console.log(quantity);
   };
   return (
     <section id="shop">

@@ -21,21 +21,23 @@ const App = () => {
     );
   if (error) return <p>A network error was encountered</p>;
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar cartCounter={cartCounter} />
-      <Outlet
-        context={{
-          products,
-          loading,
-          error,
-          cart,
-          setCart,
-          cartCounter,
-          setCartCounter,
-        }}
-      />
+      <div className="flex-1">
+        <Outlet
+          context={{
+            products,
+            loading,
+            error,
+            cart,
+            setCart,
+            cartCounter,
+            setCartCounter,
+          }}
+        />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

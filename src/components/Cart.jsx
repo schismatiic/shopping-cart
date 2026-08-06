@@ -26,7 +26,11 @@ const Cart = () => {
                 </li>
               ))}
             </ul>
-          ) : null}
+          ) : (
+            <div className="flex flex-col my-5 mx-6 md:mx-30 gap-4 border border-rose-300/30 rounded-xl p-4 ">
+              <h3>The cart is empty</h3>
+            </div>
+          )}
         </div>
       </div>
     </section>

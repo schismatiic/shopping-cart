@@ -3,7 +3,7 @@ const CartItems = ({ cartName, cartPrice, cartImage, cartQuantity }) => {
     <div className="flex text-xs md:text-lg justify-between text-slate-600">
       <div className="flex items-center">
         <img
-          className="w-20 h-20 md:w-30 md:h-30 object-cover border border-rose-300/30 rounded-xl p-4"
+          className="w-20 h-20 md:w-30 md:h-30 object-fit border border-rose-300/30 rounded-xl p-2"
           src={cartImage}
           alt={cartName}
         />
@@ -13,7 +13,7 @@ const CartItems = ({ cartName, cartPrice, cartImage, cartQuantity }) => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center gap-x-2">
+      <div className="flex justify-between items-center gap-x-2 md:gap-x-10">
         <div className="flex items-center">
           <button className="flex justify-center items-center rounded-l-lg w-4 h-4 p-3 md:p-4 cursor-pointer text-xl md:text-2xl font-medium border border-rose-300/30 hover:bg-teal-100 active:scale-95">
             -
@@ -27,7 +27,7 @@ const CartItems = ({ cartName, cartPrice, cartImage, cartQuantity }) => {
         </div>
         <div>
           <h3 className="font-semibold">Total:</h3>
-          <p>${cartPrice * cartQuantity}</p>
+          <p>${(cartPrice * cartQuantity).toFixed(2)}</p>
         </div>
       </div>
     </div>
