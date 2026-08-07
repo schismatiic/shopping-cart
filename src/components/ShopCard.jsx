@@ -18,7 +18,7 @@ const ShopCard = ({
       className="flex h-full flex-col gap-2 border border-rose-300/30 rounded-xl overflow-hidden shadow-md transition-transform duration-300 ease-out hover:scale-105"
     >
       <img
-        className="w-full h-56 sm:h-64 lg:h-72 object-cover"
+        className="w-full h-56 sm:h-64 lg:h-72 object-fit p-4"
         src={shopImage}
         alt={shopName}
       />
